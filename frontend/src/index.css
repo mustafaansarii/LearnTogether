@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* General body styles */
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: white; /* Default background color */
+  }
+  
+  /* Apply gradient background to body */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10; /* Ensure it stays behind all content */
+    background: linear-gradient(to right, #8080800a 1px, transparent 1px),
+                linear-gradient(to bottom, #8080800a 1px, transparent 1px);
+    background-size: 14px 24px;
+  }
+  
+  /* Circle background with fuchsia color */
+  body .circle-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 310px;
+    height: 310px;
+    background-color: #FF00FF; /* Fuchsia background */
+    opacity: 0.4; /* Increased opacity for better visibility */
+    border-radius: 50%; /* Makes it a circle */
+    filter: blur(100px); /* Apply blur effect */
+    z-index: -10; /* Keep it behind the content */
+  }
+  
+  /* Apply fuchsia background to the navigation */
+  nav {
+    background-color: #FF00FF; /* Fuchsia background */
+    color: white; /* Text color for better contrast */
+  }
+  
+  /* Additional styling for navigation links */
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  /* Hover effect for navigation links */
+  nav a:hover {
+    color: black; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.4); /* Light white background on hover */
+  }
+  

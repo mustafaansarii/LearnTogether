@@ -1,0 +1,51 @@
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Light Mode */
+  body {
+    position: relative;
+    background-color: #ffffff; 
+    background-image: 
+      linear-gradient(to right, #80808010 1px, transparent 1px), 
+      linear-gradient(to bottom, #8080801c 1px, transparent 1px);
+    background-size: 14px 24px;
+    color: black; 
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset-x: 0;
+    top: 0;
+    z-index: -10;
+    margin: auto;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background-color: #f0abfc;  /* Fuchsia color */
+    opacity: 0.2;
+    filter: blur(100px);
+  }
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #05051f; 
+      background-image: 
+        linear-gradient(to right, #4f4f4f2e 1px, transparent 1px), 
+        linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px);
+      background-size: 14px 24px;
+      color: white; 
+    }
+
+    body::before {
+      background-color: #f0abfc; 
+    }
+  }
